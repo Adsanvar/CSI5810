@@ -10,9 +10,8 @@ y = data[['X1']]
 
 Y= data.iloc[:, 0]
 #X3 = data.iloc[:, 2]
-X3 = data['X3'].to_numpy()
+X3 = data['X7']
 lm = LinearRegression()
-print(X3)
 model = lm.fit(X, y)
 # plt.title('Crime Rate Data')
 # plt.scatter(X['X3'], y, label="X3")
@@ -33,17 +32,17 @@ model = lm.fit(X, y)
 N = 50
 alpha = 1.3
 
-w = np.random.randn(1)
+w = np.random.randn(50)
 
-l_rate = 15
+l_rate = 10
 result = []
 loss = 0
 
-x0 = np.ones((N,1))
-print(x0)
-X = np.hstack((x0, X3))
+#x0 = np.ones((N,1))
+#print(x0)
+#X = np.hstack((x0, X3))
+#print(X)
 
-print(X)
 for t in range(5):
     y_pred = X3.dot(w)
     loss = np.square(y_pred - Y)
@@ -55,4 +54,3 @@ for t in range(5):
     w -= l_rate * grad_w
 
 print(w)
-print(result)

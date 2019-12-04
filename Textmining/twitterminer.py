@@ -8,21 +8,21 @@ atc = 'AsmdQwSVOWuyINLu2HDRs8QuyiiYU9FBsL9AHtUrAXWU9'
 
 auth = tweepy.OAuthHandler(key, sec)
 auth.set_access_token(at, atc)
-api = tweepy.API(auth,proxy='https://ep.threatpulse.net:80',wait_on_rate_limit=True)
+api = tweepy.API(auth,wait_on_rate_limit=True)
 
-timeLine = api.home_timeline()
+#####United Airlines
+# Open/Create a file to append data
+csvFile = open('championsLeague.csv', 'a')
+#Use csv Writer
+csvWriter = csv.writer(csvFile)
 
-for tweet in timeLine:
-    print(tweet)
+for tweet in tweepy.Cursor(api.user_timeline,id='ChampionsLeague',
+                           lang="en").items():
+    print (tweet.created_at, tweet.text)
+    csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
 
-# #####United Airlines
-# # Open/Create a file to append data
-# csvFile = open('ua.csv', 'a')
-# #Use csv Writer
-# csvWriter = csv.writer(csvFile)
-
-# for tweet in tweepy.Cursor(api.search,q="#unitedAIRLINES",count=100,
+# for tweet in tweepy.Cursor(api.search,q="@LaLiga",
 #                            lang="en",
-#                            since="2017-04-03").items():
+#                            since="2019-01-01").items():
 #     print (tweet.created_at, tweet.text)
 #     csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])

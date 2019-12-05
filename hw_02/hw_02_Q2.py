@@ -9,7 +9,6 @@ indx = 0
 lst = []
 for i in mycorpus.fileids():
     nlst = mycorpus.raw(i)
-    print(nlst)
     indx = indx+1
     lst.append(nlst)
 corpus = np.array(lst)
@@ -20,7 +19,9 @@ vec.fit(corpus)
 #Sparse matrix
 X = vec.transform(corpus)
 bM = pd.DataFrame(X.toarray(), columns = vec.get_feature_names(), index = mycorpus.fileids()).T
-
+print(type(corpus))
+print(corpus)
+print(bM)
 # bM.to_csv('booleanMatrix.csv')
 # # Jaccards similarity
 # from sklearn.metrics import jaccard_score

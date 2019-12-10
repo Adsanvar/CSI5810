@@ -97,7 +97,7 @@ Learning Rate 10 yields: a weight of 8.163
 
 Similarly we can do the same with the other attributes.
 
-X4: 
+X4:
 
 Learning Rate 15 yields: a weight of 5.34
 
@@ -129,6 +129,52 @@ X1 = 489.65 + (8.056 * X3) + (5.34 * X4) + (1.458* X5) + (4.192 * X6) + (6.597 *
 
 ## **Question 3**
 
+Decomposition of minimum support threshold of 30%:
+
+Item | Frequency | Support %
+--|-- | --
+A | 5 |  50%
+B | 7 |  70%
+C | 5 |  50%
+D | 9 |  90%
+E | 6 |  60%
+
+Threshold of the combinations of the TID:
+
+Item | Frequency | Support %
+--|-- | --
+AB | 3 | 30%
+<del>AC | <del>2 | <del>20%
+AD | 4 | 40%
+AE | 4 | 40%
+BC | 3 | 30%
+BD  | 6  |  60%
+BE  | 4  |  40%
+CD  | 4  |  40%
+<del>CE</del>  | <del>2</del>  |  <del>20%</del>
+DE  | 6  |  60%
+
+Since AC and CE are below 30% we can remove.
+
+Now that we have our singular and 2 combinations above the 30% threshold we can look into the three items that have an occurance of 30%:
+
+Item | Frequency | Support %
+--|--|--
+<del>ABD | <del>2 | <del>20%
+<del>ABE  | <del>2 | <del>20%
+ADE   | 4  | 40%
+<del>BCD   | <del>2  | <del>20%
+<del>BCE   | <del>1  | <del>10%
+BDE   | 3  | 30%
+
+Again removing the items that below 30% gives us:
+
+Item | Frequency | Support %
+--|--|--
+ADE   | 4  | 40%
+BDE   | 3  | 30%
+
+So ADE and BDE are the most frequent subsets that are at par or greater than 30%.
 
 ## **Question 4**
 **Note: I conducted the SVD example and got exact results as in lecture notes, but when I did them with the HW Term Document Matrix, the result are different from the lectures notes. I proceeeded with my calculations**

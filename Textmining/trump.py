@@ -20,6 +20,7 @@ for i in np.array(trump['Date']):
     info = i.split()
     x.append(info)
 df = pd.DataFrame(x, columns=['Date', 'Time'])
+print(df)
 counts = df['Date'].value_counts().sort_index()
 
 s = []
@@ -28,7 +29,7 @@ for i in df['Time']:
     s.append(h)
 ds = pd.DataFrame(s, columns=['hours'])
 freq = ds['hours'].value_counts().sort_index()
-
+print(ds)
 
 morning = []
 evening = []

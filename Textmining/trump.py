@@ -117,7 +117,12 @@ filterDF['Tweet'] = w
 #combines into one string
 w = ' '.join(w)
 
-#selected = ' '.join(selected)
+
+# selected = []
+# for i in range(len(filterDF['Date'])):
+#     if filterDF['Date'][i] == '12/2/2019':
+#         selected.append(filterDF['Tweet'][i])
+# selected = ' '.join(selected)
 # z = []
 # z.append(selected)
 
@@ -160,7 +165,7 @@ bM = pd.DataFrame(x.toarray(),index=['count'] ,columns=y).T
 # plt.show()
 # #plt.savefig('common_in_day.png', format='png')
 
-######Common in all days above 1
+######Common in all days above 2
 
 # words = []
 # qty = []
@@ -184,7 +189,28 @@ bM = pd.DataFrame(x.toarray(),index=['count'] ,columns=y).T
 # #plt.legend()
 # plt.show()
 
-####
+#### Text common in for 12/02/2019
+# words = []
+# qty = []
+# for i in range(len(bM['count'])):
+#     if bM['count'][i] > 1:
+#         if not bM.index[i].isdigit():
+#             #print(bM.index[i], bM['count'][i])
+#             words.append(bM.index[i])
+#             qty.append(bM['count'][i])
+
+       
+# df2 = pd.DataFrame(words, columns=['word'])
+# df2['count'] = qty
+# #df2.to_csv('count_matrix.csv')
+
+# plt.bar(words, qty )
+# plt.xticks(words, rotation='vertical', fontsize=10)
+# plt.yticks(qty, rotation='vertical', fontsize =6)
+# plt.ylabel('DJT Common Words 12/02/2019')
+# plt.subplots_adjust(bottom=0.25)
+# #plt.legend()
+# plt.show()
 
 ### special case  for the day
 # special = []

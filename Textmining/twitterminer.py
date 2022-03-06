@@ -1,10 +1,7 @@
 import tweepy
 import csv
 import pandas as pd
-key = 'OdrgZP76yhFmUE13v4DZlr5SG'
-sec = '9dhATYiSQQeKuODYZSXlKzKiOkb2n1XhnqHlnbqpN0sm6s2CBB'
-at = '935321954638184449-EClvjsAyfxZRof3LbxvYQHwvBBX3gAT'
-atc = 'AsmdQwSVOWuyINLu2HDRs8QuyiiYU9FBsL9AHtUrAXWU9'
+
 
 auth = tweepy.OAuthHandler(key, sec)
 auth.set_access_token(at, atc)
